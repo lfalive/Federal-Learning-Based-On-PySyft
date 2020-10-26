@@ -1,5 +1,4 @@
 import argparse
-import logging
 import sys
 from datetime import datetime
 
@@ -12,6 +11,31 @@ from syft.frameworks.torch.fl import utils
 from syft.workers.websocket_client import WebsocketClientWorker
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
+
+
+# 用于记录控制台输出结果的Logger类，将控制台内容到指定文本文档中
+class Logger(object):
+	def __init__(self, filename='./default.log', stream=sys.stdout):
+		self.terminal = stream
+		self.log = open(filename, 'a')
+
+	def write(self, message):
+		self.terminal.write(message)
+		self.log.write(message)
+
+	def flush(self):
+		pass
+
+
+time_str = datetime.strftime(datetime.now(), '%m-%d_%H-%M-%S')  # 将时间格式化为指定格式字符串
+sys.stdout = Logger(filename="../log/" + time_str + ".txt")
+
+
+# 自定义带时间戳的print
+def mylogger(str):
+	logger_time = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
+	print(logger_time, end=" - ")
+	print(str)
 
 
 def define_and_get_arguments():
@@ -34,17 +58,18 @@ args = define_and_get_arguments()
 use_cuda = args.cuda and torch.cuda.is_available()
 torch.manual_seed(args.seed)
 device = torch.device("cuda" if use_cuda else "cpu")
-print(args)
+mylogger(args)
 
 hook = sy.TorchHook(torch)
 
 kwargs_websocket = {"hook": hook, "verbose": args.verbose}
-alice = WebsocketClientWorker(id="alice", port=8777, host='192.168.137.194', **kwargs_websocket)
-bob = WebsocketClientWorker(id="bob", port=8778, host='192.168.137.200', **kwargs_websocket)
-charlie = WebsocketClientWorker(id="charlie", port=8779, host='192.168.137.77', **kwargs_websocket)
+alice = WebsocketClientWorker(id="alice", port=8777, host='localhost', **kwargs_websocket)
+bob = WebsocketClientWorker(id="bob", port=8778, host='localhost', **kwargs_websocket)
+charlie = WebsocketClientWorker(id="charlie", port=8779, host='localhost', **kwargs_websocket)
 
 workers = [alice, bob, charlie]
-print(workers)
+for worker in workers:
+	mylogger(worker)
 
 federated_train_loader = sy.FederatedDataLoader(
 	datasets.MNIST(
@@ -90,31 +115,6 @@ class Net(nn.Module):
 
 model = Net().to(device)
 print(model)
-
-
-# 用于记录控制台输出结果的Logger类，将控制台内容到指定文本文档中
-class Logger(object):
-	def __init__(self, filename='./default.log', stream=sys.stdout):
-		self.terminal = stream
-		self.log = open(filename, 'a')
-
-	def write(self, message):
-		self.terminal.write(message)
-		self.log.write(message)
-
-	def flush(self):
-		pass
-
-
-time_str = datetime.strftime(datetime.now(), '%m-%d_%H-%M-%S')  # 将时间格式化为指定格式字符串
-sys.stdout = Logger(filename="../log/" + time_str + ".txt")
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-handler = logging.StreamHandler(sys.stderr)
-formatter = logging.Formatter("%(asctime)s %(levelname)s %(filename)s(l:%(lineno)d) - %(message)s")
-handler.setFormatter(formatter)
-logger.handlers = [handler]
 
 
 def get_next_batches(fdataloader: sy.FederatedDataLoader, nr_batches: int):
@@ -176,14 +176,13 @@ def train_on_batches(worker, batches, model_in, device, lr):
 		if batch_idx % args.log_interval == 0:
 			loss = loss.get()  # <-- NEW: get the loss back
 			loss_local = True
-			logger.debug(
-				"Train Worker {}: [{}/{} ({:.0f}%)]\tLoss: {:.6f}".format(
-					worker.id,
-					batch_idx,
-					len(batches),
-					100.0 * batch_idx / len(batches),
-					loss.item(),
-				)
+			mylogger("Train Worker {}: [{}/{} ({:.0f}%)]\tLoss: {:.6f}".format(
+				worker.id,
+				batch_idx,
+				len(batches),
+				100.0 * batch_idx / len(batches),
+				loss.item(),
+			)
 			)
 
 	if not loss_local:
@@ -205,7 +204,7 @@ def train(model, device, federated_train_loader, lr, federate_after_n_batches, a
 	counter = 0
 
 	while True:
-		logger.debug(f"Starting training round, batches [{counter}, {counter + nr_batches}]")
+		mylogger(f"Starting training round, batches [{counter}, {counter + nr_batches}]")
 		data_for_all_workers = True
 		for worker in batches:
 			curr_batches = batches[worker]
@@ -217,7 +216,7 @@ def train(model, device, federated_train_loader, lr, federate_after_n_batches, a
 				data_for_all_workers = False
 		counter += nr_batches
 		if not data_for_all_workers:
-			logger.debug("At least one worker ran out of data, stopping.")
+			mylogger("At least one worker ran out of data, stopping.")
 			break
 
 		model = utils.federated_avg(models)
@@ -241,9 +240,8 @@ def test(model, device, test_loader):
 
 	test_loss /= len(test_loader.dataset)
 
-	logger.debug("\n")
 	accuracy = 100.0 * correct / len(test_loader.dataset)
-	logger.info(
+	mylogger(
 		"Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n".format(
 			test_loss, correct, len(test_loader.dataset), accuracy
 		)
@@ -251,6 +249,6 @@ def test(model, device, test_loader):
 
 
 for epoch in range(1, args.epochs + 1):
-	print("Starting epoch {}/{}".format(epoch, args.epochs))
+	mylogger("Starting epoch {}/{}".format(epoch, args.epochs))
 	model = train(model, device, federated_train_loader, args.lr, args.federate_after_n_batches, abort_after_one=False)
 	test(model, device, test_loader)
