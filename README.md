@@ -4,6 +4,8 @@
 
 [联邦学习小系统搭建和测试（PySyft + Raspberry Pi 4）](https://zhuanlan.zhihu.com/p/181733116)
 
+[OpenMined](https://github.com/OpenMined)/[PySyft](https://github.com/OpenMined/PySyft)
+
 ### 安装树莓派系统
 
 [官方镜像下载链接](https://www.raspberrypi.org/downloads/raspberry-pi-os/)，选择Raspberry Pi OS (32-bit) with desktop and recommended software。
@@ -105,3 +107,5 @@ python3 src/run_websocket_server.py --host 'xx' --port 8779 --id charlie
 ```
 
 树莓派端运行时要加入各自的IP参数，PC端也要修改`main.py`内`WebsocketClientWorker`函数对应的host参数再运行。
+
+训练的epoch和batch_size等具体参数，命令行运行的时候加对应参数即可。

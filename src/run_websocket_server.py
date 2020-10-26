@@ -1,26 +1,19 @@
-from multiprocessing import Process
 import argparse
-import os
 import logging
-import syft as sy
-from syft.workers.websocket_server import WebsocketServerWorker
-import torch
+import os
+from multiprocessing import Process
+
 import numpy as np
+import syft as sy
+import torch
+from syft.frameworks.torch.fl import utils
+from syft.workers.websocket_server import WebsocketServerWorker
 from torchvision import datasets
 from torchvision import transforms
-from syft.frameworks.torch.fl import utils
-
-KEEP_LABELS_DICT = {
-    "alice": [0, 1, 2, 3],
-    "bob": [4, 5, 6],
-    "charlie": [7, 8, 9],
-    "testing": list(range(10)),
-    None: list(range(10)),
-}
 
 
 def start_websocket_server_worker(
-    id, host, port, hook, verbose, keep_labels=None, training=True, pytest_testing=False
+        id, host, port, hook, verbose, keep_labels=None, training=True, pytest_testing=False
 ):
     """Helper function for spinning up a websocket server and setting up the local datasets."""
 
@@ -181,30 +174,15 @@ if __name__ == "__main__":
     hook = sy.TorchHook(torch)
 
     # server = start_proc(WebsocketServerWorker, kwargs)
-    if args.notebook == "normal" or args.notebook == "mnist" or args.notebook == "steal_data":
-        kwargs = {
-            "id": args.id,
-            "host": args.host,
-            "port": args.port,
-            "hook": hook,
-            "verbose": args.verbose,
-        }
-        if os.name != "nt" and (args.notebook == "normal" or args.notebook == "mnist"):
-            server = start_proc(WebsocketServerWorker, kwargs)
-        elif os.name != "nt" and args.notebook == "steal_data":
-            server = start_proc_steal_data_over_sockets(WebsocketServerWorker, kwargs)
-        else:
-            server = WebsocketServerWorker(**kwargs)
-            server.start()
-    elif args.notebook == "mnist-parallel" or args.pytest_testing:
-        server = start_websocket_server_worker(
-            id=args.id,
-            host=args.host,
-            port=args.port,
-            hook=hook,
-            verbose=args.verbose,
-            keep_labels=KEEP_LABELS_DICT[args.id]
-            if args.id in KEEP_LABELS_DICT
-            else list(range(10)),
-            training=not args.testing,
-        )
+    kwargs = {
+        "id": args.id,
+        "host": args.host,
+        "port": args.port,
+        "hook": hook,
+        "verbose": args.verbose,
+    }
+    if os.name != "nt":
+        server = start_proc(WebsocketServerWorker, kwargs)
+    else:
+        server = WebsocketServerWorker(**kwargs)
+        server.start()
