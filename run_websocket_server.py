@@ -19,6 +19,7 @@ def start_proc(participant, kwargs):  # pragma: no cover
     p.start()
     return p
 
+
 if __name__ == "__main__":
 
     # Logging setup

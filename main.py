@@ -15,7 +15,7 @@ from torchvision import datasets, transforms
 
 # 用于记录控制台输出结果的Logger类，将控制台内容到指定文本文档中
 class Logger(object):
-	def __init__(self, filename='./default.log', stream=sys.stdout):
+	def __init__(self, filename='./log/default.log', stream=sys.stdout):
 		self.terminal = stream
 		self.log = open(filename, 'a')
 
@@ -28,7 +28,7 @@ class Logger(object):
 
 
 time_str = datetime.strftime(datetime.now(), '%m-%d_%H-%M-%S')  # 将时间格式化为指定格式字符串
-sys.stdout = Logger(filename="../log/" + time_str + ".txt")
+sys.stdout = Logger(filename="./log/" + time_str + ".log")
 
 
 # 自定义带时间戳的print
@@ -73,7 +73,7 @@ for worker in workers:
 
 federated_train_loader = sy.FederatedDataLoader(
 	datasets.MNIST(
-		"../data",
+		"./data",
 		train=True,
 		download=True,
 		transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
@@ -85,7 +85,7 @@ federated_train_loader = sy.FederatedDataLoader(
 
 test_loader = DataLoader(
 	datasets.MNIST(
-		"../data",
+		"./data",
 		train=False,
 		transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 	),

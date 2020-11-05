@@ -89,23 +89,27 @@ python -m pip install lz4~=3.0.2 msgpack~=1.0.0 phe~=1.4.0 scipy~=1.4.1 syft-pro
 进入项目目录，开三个终端分别运行`run_websocket_server.py`，仅显示一句`Serving. Press CTRL-C to stop.`即成功，不会显示其他内容。
 
 ```bash
-python src/run_websocket_server.py --port 8777 --id alice
-python src/run_websocket_server.py --port 8778 --id bob
-python src/run_websocket_server.py --port 8779 --id charlie
+python run_websocket_server.py --port 8777 --id alice
+python run_websocket_server.py --port 8778 --id bob
+python run_websocket_server.py --port 8779 --id charlie
 ```
 
 再运行`main.py`即可。
 
 ### 正式运行
 
-将项目copy到树莓派中，三个树莓派分别运行`run_websocket_server.py`，和本地测试显示一样。
+将`run_websocket_server.py`文件copy到树莓派中，并用三个树莓派分别运行即可，终端显示内容和本地测试一样。
 
 ```bash
-python3 src/run_websocket_server.py --host 'xx' --port 8777 --id alice
-python3 src/run_websocket_server.py --host 'xx' --port 8788 --id bob
-python3 src/run_websocket_server.py --host 'xx' --port 8779 --id charlie
+python3 run_websocket_server.py --host 'xx' --port 8777 --id alice
+python3 run_websocket_server.py --host 'xx' --port 8788 --id bob
+python3 run_websocket_server.py --host 'xx' --port 8779 --id charlie
 ```
 
 树莓派端运行时要加入各自的IP参数，PC端也要修改`main.py`内`WebsocketClientWorker`函数对应的host参数再运行。
 
-训练的epoch和batch_size等具体参数，命令行运行的时候加对应参数即可。
+训练的epoch和batch_size等具体参数，命令行运行的时候加对应参数即可，例如：
+
+```bash
+python main.py --batch_size 256
+```
