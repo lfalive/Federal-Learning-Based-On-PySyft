@@ -98,14 +98,16 @@ class Net(nn.Module):
 	def __init__(self):
 		super(Net, self).__init__()
 		self.conv1 = nn.Conv2d(1, 20, 5, 1)
+		self.BN1 = nn.BatchNorm2d(20)
 		self.conv2 = nn.Conv2d(20, 50, 5, 1)
+		self.BN2 = nn.BatchNorm2d(50)
 		self.fc1 = nn.Linear(4 * 4 * 50, 500)
 		self.fc2 = nn.Linear(500, 10)
 
 	def forward(self, x):
-		x = f.relu(self.conv1(x))
+		x = f.relu(self.BN1(self.conv1(x)))
 		x = f.max_pool2d(x, 2, 2)
-		x = f.relu(self.conv2(x))
+		x = f.relu(self.BN2(self.conv2(x)))
 		x = f.max_pool2d(x, 2, 2)
 		x = x.view(-1, 4 * 4 * 50)
 		x = f.relu(self.fc1(x))
@@ -159,7 +161,7 @@ def train_on_batches(worker, batches, model_in, device, lr):
 
     """
 	model = model_in.copy()
-	optimizer = optim.SGD(model.parameters(), lr=lr)
+	optimizer = optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.99))
 
 	model.train()
 	model.send(worker)
