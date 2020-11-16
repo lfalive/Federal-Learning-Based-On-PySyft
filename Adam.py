@@ -155,8 +155,8 @@ def train_on_batches(worker, batches, model_in, device, lr):
         model, loss: obtained model and loss after training
     """
 	model = model_in.copy()
-	optimizer = optim.SGD(model.parameters(), lr=lr)
-	# optimizer = optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.99))
+	# optimizer = optim.SGD(model.parameters(), lr=lr)
+	optimizer = optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.99))
 
 	model.train()
 	model.send(worker)

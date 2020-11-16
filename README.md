@@ -101,9 +101,9 @@ python run_websocket_server.py --port 8779 --id charlie
 将`run_websocket_server.py`文件copy到树莓派中，并用三个树莓派分别运行即可，终端显示内容和本地测试一样。
 
 ```bash
-python3 run_websocket_server.py --host 'xx' --port 8777 --id alice
-python3 run_websocket_server.py --host 'xx' --port 8788 --id bob
-python3 run_websocket_server.py --host 'xx' --port 8779 --id charlie
+python3 run_websocket_server.py --host 'xxx.xxx.xxx.xxx' --port 8777 --id alice
+python3 run_websocket_server.py --host 'xxx.xxx.xxx.xxx' --port 8778 --id bob
+python3 run_websocket_server.py --host 'xxx.xxx.xxx.xxx' --port 8779 --id charlie
 ```
 
 树莓派端运行时要加入各自的IP参数，PC端也要修改`main.py`内`WebsocketClientWorker`函数对应的host参数再运行。
