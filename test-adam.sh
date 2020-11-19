@@ -1,0 +1,9 @@
+python Adam.py --batch_size 128 --lr 0.05 --epochs 12
+python Adam.py --batch_size 128 --lr 0.01 --epochs 12
+python Adam.py --batch_size 128 --lr 0.005 --epochs 15
+python Adam.py --batch_size 64 --lr 0.05 --epochs 6
+python Adam.py --batch_size 64 --lr 0.01 --epochs 6
+python Adam.py --batch_size 64 --lr 0.005 --epochs 8
+python Adam.py --batch_size 32 --lr 0.05 --epochs 6
+python Adam.py --batch_size 32 --lr 0.01 --epochs 6
+python Adam.py --batch_size 32 --lr 0.005 --epochs 8

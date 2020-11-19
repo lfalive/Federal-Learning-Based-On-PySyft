@@ -1,0 +1,420 @@
+2020-11-17 15:59:28 - Namespace(batch_size=64, cuda=False, epochs=8, federate_after_n_batches=50, log_interval=25, lr=0.005, seed=1, test_batch_size=1000, verbose=False)
+2020-11-17 15:59:28 - <WebsocketClientWorker id:alice #objects local:0 #objects remote: 0>
+2020-11-17 15:59:28 - <WebsocketClientWorker id:bob #objects local:0 #objects remote: 0>
+2020-11-17 15:59:28 - <WebsocketClientWorker id:charlie #objects local:0 #objects remote: 0>
+Net(
+  (conv1): Conv2d(1, 20, kernel_size=(5, 5), stride=(1, 1))
+  (BN1): BatchNorm2d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv2): Conv2d(20, 50, kernel_size=(5, 5), stride=(1, 1))
+  (BN2): BatchNorm2d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (fc1): Linear(in_features=800, out_features=500, bias=True)
+  (fc2): Linear(in_features=500, out_features=10, bias=True)
+)
+2020-11-17 15:59:41 - Starting epoch 1/8
+2020-11-17 16:00:02 - Starting training round, batches [0, 50]
+2020-11-17 16:00:03 - Train Worker alice: [0/50 (0%)]	Loss: 2.310694
+2020-11-17 16:00:11 - Train Worker alice: [25/50 (50%)]	Loss: 0.531133
+2020-11-17 16:00:21 - Train Worker bob: [0/50 (0%)]	Loss: 2.298535
+2020-11-17 16:00:29 - Train Worker bob: [25/50 (50%)]	Loss: 1.293123
+2020-11-17 16:00:39 - Train Worker charlie: [0/50 (0%)]	Loss: 2.314187
+2020-11-17 16:00:47 - Train Worker charlie: [25/50 (50%)]	Loss: 0.332467
+2020-11-17 16:01:19 - Starting training round, batches [50, 100]
+2020-11-17 16:01:19 - Train Worker alice: [0/50 (0%)]	Loss: 1.610612
+2020-11-17 16:01:27 - Train Worker alice: [25/50 (50%)]	Loss: 0.228429
+2020-11-17 16:01:38 - Train Worker bob: [0/50 (0%)]	Loss: 1.524505
+2020-11-17 16:01:46 - Train Worker bob: [25/50 (50%)]	Loss: 0.164064
+2020-11-17 16:01:56 - Train Worker charlie: [0/50 (0%)]	Loss: 1.468965
+2020-11-17 16:02:04 - Train Worker charlie: [25/50 (50%)]	Loss: 0.311028
+2020-11-17 16:02:35 - Starting training round, batches [100, 150]
+2020-11-17 16:02:36 - Train Worker alice: [0/50 (0%)]	Loss: 0.147815
+2020-11-17 16:02:44 - Train Worker alice: [25/50 (50%)]	Loss: 0.327239
+2020-11-17 16:02:54 - Train Worker bob: [0/50 (0%)]	Loss: 0.095713
+2020-11-17 16:03:03 - Train Worker bob: [25/50 (50%)]	Loss: 0.183903
+2020-11-17 16:03:13 - Train Worker charlie: [0/50 (0%)]	Loss: 0.069483
+2020-11-17 16:03:21 - Train Worker charlie: [25/50 (50%)]	Loss: 0.151294
+2020-11-17 16:03:52 - Starting training round, batches [150, 200]
+2020-11-17 16:03:53 - Train Worker alice: [0/50 (0%)]	Loss: 0.063236
+2020-11-17 16:04:01 - Train Worker alice: [25/50 (50%)]	Loss: 0.319464
+2020-11-17 16:04:11 - Train Worker bob: [0/50 (0%)]	Loss: 0.091345
+2020-11-17 16:04:19 - Train Worker bob: [25/50 (50%)]	Loss: 0.197280
+2020-11-17 16:04:29 - Train Worker charlie: [0/50 (0%)]	Loss: 0.081653
+2020-11-17 16:04:38 - Train Worker charlie: [25/50 (50%)]	Loss: 0.170014
+2020-11-17 16:05:08 - Starting training round, batches [200, 250]
+2020-11-17 16:05:09 - Train Worker alice: [0/50 (0%)]	Loss: 0.041923
+2020-11-17 16:05:17 - Train Worker alice: [25/50 (50%)]	Loss: 0.030695
+2020-11-17 16:05:28 - Train Worker bob: [0/50 (0%)]	Loss: 0.034856
+2020-11-17 16:05:36 - Train Worker bob: [25/50 (50%)]	Loss: 0.059791
+2020-11-17 16:05:46 - Train Worker charlie: [0/50 (0%)]	Loss: 0.021322
+2020-11-17 16:05:54 - Train Worker charlie: [25/50 (50%)]	Loss: 0.055049
+2020-11-17 16:06:26 - Starting training round, batches [250, 300]
+2020-11-17 16:06:27 - Train Worker alice: [0/50 (0%)]	Loss: 0.077627
+2020-11-17 16:06:35 - Train Worker alice: [25/50 (50%)]	Loss: 0.149946
+2020-11-17 16:06:45 - Train Worker bob: [0/50 (0%)]	Loss: 0.145117
+2020-11-17 16:06:53 - Train Worker bob: [25/50 (50%)]	Loss: 0.077976
+2020-11-17 16:07:04 - Train Worker charlie: [0/50 (0%)]	Loss: 0.030353
+2020-11-17 16:07:12 - Train Worker charlie: [25/50 (50%)]	Loss: 0.052711
+2020-11-17 16:07:27 - Starting training round, batches [300, 350]
+2020-11-17 16:07:27 - Train Worker alice: [0/13 (0%)]	Loss: 0.068894
+2020-11-17 16:07:34 - Train Worker bob: [0/13 (0%)]	Loss: 0.038544
+2020-11-17 16:07:40 - Train Worker charlie: [0/13 (0%)]	Loss: 0.021869
+2020-11-17 16:07:46 - Starting training round, batches [350, 400]
+2020-11-17 16:07:46 - At least one worker ran out of data, stopping.
+2020-11-17 16:07:52 - Test set: Average loss: 0.0705, Accuracy: 9771/10000 (98%)
+
+2020-11-17 16:07:52 - Starting epoch 2/8
+2020-11-17 16:08:14 - Starting training round, batches [0, 50]
+2020-11-17 16:08:15 - Train Worker alice: [0/50 (0%)]	Loss: 0.016144
+2020-11-17 16:08:23 - Train Worker alice: [25/50 (50%)]	Loss: 0.069043
+2020-11-17 16:08:33 - Train Worker bob: [0/50 (0%)]	Loss: 0.036746
+2020-11-17 16:08:41 - Train Worker bob: [25/50 (50%)]	Loss: 0.141331
+2020-11-17 16:08:52 - Train Worker charlie: [0/50 (0%)]	Loss: 0.079381
+2020-11-17 16:09:00 - Train Worker charlie: [25/50 (50%)]	Loss: 0.020690
+2020-11-17 16:09:31 - Starting training round, batches [50, 100]
+2020-11-17 16:09:32 - Train Worker alice: [0/50 (0%)]	Loss: 0.071803
+2020-11-17 16:09:40 - Train Worker alice: [25/50 (50%)]	Loss: 0.029881
+2020-11-17 16:09:50 - Train Worker bob: [0/50 (0%)]	Loss: 0.040233
+2020-11-17 16:09:59 - Train Worker bob: [25/50 (50%)]	Loss: 0.061304
+2020-11-17 16:10:09 - Train Worker charlie: [0/50 (0%)]	Loss: 0.024622
+2020-11-17 16:10:17 - Train Worker charlie: [25/50 (50%)]	Loss: 0.048075
+2020-11-17 16:10:48 - Starting training round, batches [100, 150]
+2020-11-17 16:10:49 - Train Worker alice: [0/50 (0%)]	Loss: 0.097987
+2020-11-17 16:10:57 - Train Worker alice: [25/50 (50%)]	Loss: 0.066240
+2020-11-17 16:11:07 - Train Worker bob: [0/50 (0%)]	Loss: 0.013491
+2020-11-17 16:11:15 - Train Worker bob: [25/50 (50%)]	Loss: 0.073018
+2020-11-17 16:11:26 - Train Worker charlie: [0/50 (0%)]	Loss: 0.087491
+2020-11-17 16:11:34 - Train Worker charlie: [25/50 (50%)]	Loss: 0.181642
+2020-11-17 16:12:05 - Starting training round, batches [150, 200]
+2020-11-17 16:12:06 - Train Worker alice: [0/50 (0%)]	Loss: 0.003982
+2020-11-17 16:12:14 - Train Worker alice: [25/50 (50%)]	Loss: 0.119210
+2020-11-17 16:12:24 - Train Worker bob: [0/50 (0%)]	Loss: 0.058207
+2020-11-17 16:12:32 - Train Worker bob: [25/50 (50%)]	Loss: 0.320891
+2020-11-17 16:12:43 - Train Worker charlie: [0/50 (0%)]	Loss: 0.024108
+2020-11-17 16:12:51 - Train Worker charlie: [25/50 (50%)]	Loss: 0.014553
+2020-11-17 16:13:25 - Starting training round, batches [200, 250]
+2020-11-17 16:13:26 - Train Worker alice: [0/50 (0%)]	Loss: 0.033411
+2020-11-17 16:13:34 - Train Worker alice: [25/50 (50%)]	Loss: 0.063543
+2020-11-17 16:13:45 - Train Worker bob: [0/50 (0%)]	Loss: 0.037711
+2020-11-17 16:13:53 - Train Worker bob: [25/50 (50%)]	Loss: 0.204398
+2020-11-17 16:14:04 - Train Worker charlie: [0/50 (0%)]	Loss: 0.076997
+2020-11-17 16:14:12 - Train Worker charlie: [25/50 (50%)]	Loss: 0.119958
+2020-11-17 16:14:45 - Starting training round, batches [250, 300]
+2020-11-17 16:14:46 - Train Worker alice: [0/50 (0%)]	Loss: 0.024405
+2020-11-17 16:14:54 - Train Worker alice: [25/50 (50%)]	Loss: 0.013380
+2020-11-17 16:15:05 - Train Worker bob: [0/50 (0%)]	Loss: 0.020450
+2020-11-17 16:15:13 - Train Worker bob: [25/50 (50%)]	Loss: 0.215932
+2020-11-17 16:15:24 - Train Worker charlie: [0/50 (0%)]	Loss: 0.002139
+2020-11-17 16:15:32 - Train Worker charlie: [25/50 (50%)]	Loss: 0.036927
+2020-11-17 16:15:49 - Starting training round, batches [300, 350]
+2020-11-17 16:15:49 - Train Worker alice: [0/13 (0%)]	Loss: 0.056445
+2020-11-17 16:15:56 - Train Worker bob: [0/13 (0%)]	Loss: 0.006510
+2020-11-17 16:16:03 - Train Worker charlie: [0/13 (0%)]	Loss: 0.162693
+2020-11-17 16:16:09 - Starting training round, batches [350, 400]
+2020-11-17 16:16:09 - At least one worker ran out of data, stopping.
+2020-11-17 16:16:15 - Test set: Average loss: 0.0626, Accuracy: 9825/10000 (98%)
+
+2020-11-17 16:16:15 - Starting epoch 3/8
+2020-11-17 16:16:39 - Starting training round, batches [0, 50]
+2020-11-17 16:16:40 - Train Worker alice: [0/50 (0%)]	Loss: 0.018649
+2020-11-17 16:16:48 - Train Worker alice: [25/50 (50%)]	Loss: 0.048008
+2020-11-17 16:16:59 - Train Worker bob: [0/50 (0%)]	Loss: 0.073839
+2020-11-17 16:17:07 - Train Worker bob: [25/50 (50%)]	Loss: 0.180264
+2020-11-17 16:17:18 - Train Worker charlie: [0/50 (0%)]	Loss: 0.055413
+2020-11-17 16:17:26 - Train Worker charlie: [25/50 (50%)]	Loss: 0.037612
+2020-11-17 16:18:00 - Starting training round, batches [50, 100]
+2020-11-17 16:18:00 - Train Worker alice: [0/50 (0%)]	Loss: 0.268909
+2020-11-17 16:18:09 - Train Worker alice: [25/50 (50%)]	Loss: 0.173905
+2020-11-17 16:18:19 - Train Worker bob: [0/50 (0%)]	Loss: 0.010642
+2020-11-17 16:18:27 - Train Worker bob: [25/50 (50%)]	Loss: 0.169852
+2020-11-17 16:18:38 - Train Worker charlie: [0/50 (0%)]	Loss: 0.005210
+2020-11-17 16:18:46 - Train Worker charlie: [25/50 (50%)]	Loss: 0.279959
+2020-11-17 16:19:21 - Starting training round, batches [100, 150]
+2020-11-17 16:19:21 - Train Worker alice: [0/50 (0%)]	Loss: 0.015995
+2020-11-17 16:19:30 - Train Worker alice: [25/50 (50%)]	Loss: 0.012431
+2020-11-17 16:19:40 - Train Worker bob: [0/50 (0%)]	Loss: 0.019238
+2020-11-17 16:19:49 - Train Worker bob: [25/50 (50%)]	Loss: 0.081949
+2020-11-17 16:19:59 - Train Worker charlie: [0/50 (0%)]	Loss: 0.037556
+2020-11-17 16:20:08 - Train Worker charlie: [25/50 (50%)]	Loss: 0.092384
+2020-11-17 16:20:42 - Starting training round, batches [150, 200]
+2020-11-17 16:20:42 - Train Worker alice: [0/50 (0%)]	Loss: 0.072053
+2020-11-17 16:20:51 - Train Worker alice: [25/50 (50%)]	Loss: 0.352248
+2020-11-17 16:21:01 - Train Worker bob: [0/50 (0%)]	Loss: 0.005591
+2020-11-17 16:21:10 - Train Worker bob: [25/50 (50%)]	Loss: 0.113737
+2020-11-17 16:21:20 - Train Worker charlie: [0/50 (0%)]	Loss: 0.015010
+2020-11-17 16:21:29 - Train Worker charlie: [25/50 (50%)]	Loss: 0.018891
+2020-11-17 16:22:03 - Starting training round, batches [200, 250]
+2020-11-17 16:22:03 - Train Worker alice: [0/50 (0%)]	Loss: 0.006719
+2020-11-17 16:22:12 - Train Worker alice: [25/50 (50%)]	Loss: 0.133854
+2020-11-17 16:22:23 - Train Worker bob: [0/50 (0%)]	Loss: 0.006786
+2020-11-17 16:22:31 - Train Worker bob: [25/50 (50%)]	Loss: 0.116148
+2020-11-17 16:22:42 - Train Worker charlie: [0/50 (0%)]	Loss: 0.053900
+2020-11-17 16:22:50 - Train Worker charlie: [25/50 (50%)]	Loss: 0.078923
+2020-11-17 16:23:24 - Starting training round, batches [250, 300]
+2020-11-17 16:23:25 - Train Worker alice: [0/50 (0%)]	Loss: 0.046655
+2020-11-17 16:23:33 - Train Worker alice: [25/50 (50%)]	Loss: 0.113805
+2020-11-17 16:23:44 - Train Worker bob: [0/50 (0%)]	Loss: 0.020459
+2020-11-17 16:23:53 - Train Worker bob: [25/50 (50%)]	Loss: 0.083586
+2020-11-17 16:24:04 - Train Worker charlie: [0/50 (0%)]	Loss: 0.039737
+2020-11-17 16:24:12 - Train Worker charlie: [25/50 (50%)]	Loss: 0.028588
+2020-11-17 16:24:29 - Starting training round, batches [300, 350]
+2020-11-17 16:24:30 - Train Worker alice: [0/13 (0%)]	Loss: 0.034006
+2020-11-17 16:24:36 - Train Worker bob: [0/13 (0%)]	Loss: 0.110958
+2020-11-17 16:24:43 - Train Worker charlie: [0/13 (0%)]	Loss: 0.040468
+2020-11-17 16:24:49 - Starting training round, batches [350, 400]
+2020-11-17 16:24:49 - At least one worker ran out of data, stopping.
+2020-11-17 16:24:55 - Test set: Average loss: 0.0626, Accuracy: 9824/10000 (98%)
+
+2020-11-17 16:24:55 - Starting epoch 4/8
+2020-11-17 16:25:19 - Starting training round, batches [0, 50]
+2020-11-17 16:25:19 - Train Worker alice: [0/50 (0%)]	Loss: 0.010193
+2020-11-17 16:25:27 - Train Worker alice: [25/50 (50%)]	Loss: 0.423243
+2020-11-17 16:25:38 - Train Worker bob: [0/50 (0%)]	Loss: 0.070520
+2020-11-17 16:25:47 - Train Worker bob: [25/50 (50%)]	Loss: 0.054879
+2020-11-17 16:25:57 - Train Worker charlie: [0/50 (0%)]	Loss: 0.053552
+2020-11-17 16:26:06 - Train Worker charlie: [25/50 (50%)]	Loss: 0.143506
+2020-11-17 16:26:40 - Starting training round, batches [50, 100]
+2020-11-17 16:26:40 - Train Worker alice: [0/50 (0%)]	Loss: 0.052812
+2020-11-17 16:26:49 - Train Worker alice: [25/50 (50%)]	Loss: 0.033264
+2020-11-17 16:26:59 - Train Worker bob: [0/50 (0%)]	Loss: 0.039674
+2020-11-17 16:27:08 - Train Worker bob: [25/50 (50%)]	Loss: 0.281368
+2020-11-17 16:27:19 - Train Worker charlie: [0/50 (0%)]	Loss: 0.094875
+2020-11-17 16:27:27 - Train Worker charlie: [25/50 (50%)]	Loss: 0.329633
+2020-11-17 16:28:01 - Starting training round, batches [100, 150]
+2020-11-17 16:28:02 - Train Worker alice: [0/50 (0%)]	Loss: 0.068609
+2020-11-17 16:28:10 - Train Worker alice: [25/50 (50%)]	Loss: 0.005737
+2020-11-17 16:28:21 - Train Worker bob: [0/50 (0%)]	Loss: 0.058660
+2020-11-17 16:28:29 - Train Worker bob: [25/50 (50%)]	Loss: 0.177718
+2020-11-17 16:28:40 - Train Worker charlie: [0/50 (0%)]	Loss: 0.014478
+2020-11-17 16:28:48 - Train Worker charlie: [25/50 (50%)]	Loss: 0.140844
+2020-11-17 16:29:22 - Starting training round, batches [150, 200]
+2020-11-17 16:29:23 - Train Worker alice: [0/50 (0%)]	Loss: 0.063968
+2020-11-17 16:29:31 - Train Worker alice: [25/50 (50%)]	Loss: 0.031167
+2020-11-17 16:29:42 - Train Worker bob: [0/50 (0%)]	Loss: 0.029134
+2020-11-17 16:29:50 - Train Worker bob: [25/50 (50%)]	Loss: 0.271674
+2020-11-17 16:30:01 - Train Worker charlie: [0/50 (0%)]	Loss: 0.055300
+2020-11-17 16:30:09 - Train Worker charlie: [25/50 (50%)]	Loss: 0.082075
+2020-11-17 16:30:44 - Starting training round, batches [200, 250]
+2020-11-17 16:30:45 - Train Worker alice: [0/50 (0%)]	Loss: 0.065822
+2020-11-17 16:30:53 - Train Worker alice: [25/50 (50%)]	Loss: 0.156136
+2020-11-17 16:31:04 - Train Worker bob: [0/50 (0%)]	Loss: 0.065527
+2020-11-17 16:31:12 - Train Worker bob: [25/50 (50%)]	Loss: 0.195020
+2020-11-17 16:31:22 - Train Worker charlie: [0/50 (0%)]	Loss: 0.012387
+2020-11-17 16:31:31 - Train Worker charlie: [25/50 (50%)]	Loss: 0.236604
+2020-11-17 16:32:04 - Starting training round, batches [250, 300]
+2020-11-17 16:32:05 - Train Worker alice: [0/50 (0%)]	Loss: 0.033864
+2020-11-17 16:32:13 - Train Worker alice: [25/50 (50%)]	Loss: 0.067398
+2020-11-17 16:32:24 - Train Worker bob: [0/50 (0%)]	Loss: 0.066566
+2020-11-17 16:32:32 - Train Worker bob: [25/50 (50%)]	Loss: 0.057388
+2020-11-17 16:32:42 - Train Worker charlie: [0/50 (0%)]	Loss: 0.094508
+2020-11-17 16:32:50 - Train Worker charlie: [25/50 (50%)]	Loss: 0.116128
+2020-11-17 16:33:06 - Starting training round, batches [300, 350]
+2020-11-17 16:33:07 - Train Worker alice: [0/13 (0%)]	Loss: 0.093595
+2020-11-17 16:33:13 - Train Worker bob: [0/13 (0%)]	Loss: 0.064554
+2020-11-17 16:33:20 - Train Worker charlie: [0/13 (0%)]	Loss: 0.053040
+2020-11-17 16:33:26 - Starting training round, batches [350, 400]
+2020-11-17 16:33:26 - At least one worker ran out of data, stopping.
+2020-11-17 16:33:32 - Test set: Average loss: 0.0938, Accuracy: 9771/10000 (98%)
+
+2020-11-17 16:33:32 - Starting epoch 5/8
+2020-11-17 16:33:58 - Starting training round, batches [0, 50]
+2020-11-17 16:33:58 - Train Worker alice: [0/50 (0%)]	Loss: 0.275395
+2020-11-17 16:34:07 - Train Worker alice: [25/50 (50%)]	Loss: 0.047565
+2020-11-17 16:34:17 - Train Worker bob: [0/50 (0%)]	Loss: 0.077856
+2020-11-17 16:34:26 - Train Worker bob: [25/50 (50%)]	Loss: 0.170659
+2020-11-17 16:34:36 - Train Worker charlie: [0/50 (0%)]	Loss: 0.124952
+2020-11-17 16:34:44 - Train Worker charlie: [25/50 (50%)]	Loss: 0.077391
+2020-11-17 16:35:18 - Starting training round, batches [50, 100]
+2020-11-17 16:35:19 - Train Worker alice: [0/50 (0%)]	Loss: 0.129913
+2020-11-17 16:35:27 - Train Worker alice: [25/50 (50%)]	Loss: 0.120984
+2020-11-17 16:35:37 - Train Worker bob: [0/50 (0%)]	Loss: 0.126380
+2020-11-17 16:35:46 - Train Worker bob: [25/50 (50%)]	Loss: 0.072421
+2020-11-17 16:35:56 - Train Worker charlie: [0/50 (0%)]	Loss: 0.045155
+2020-11-17 16:36:05 - Train Worker charlie: [25/50 (50%)]	Loss: 0.144598
+2020-11-17 16:36:39 - Starting training round, batches [100, 150]
+2020-11-17 16:36:39 - Train Worker alice: [0/50 (0%)]	Loss: 0.065126
+2020-11-17 16:36:48 - Train Worker alice: [25/50 (50%)]	Loss: 0.071400
+2020-11-17 16:36:58 - Train Worker bob: [0/50 (0%)]	Loss: 0.053917
+2020-11-17 16:37:07 - Train Worker bob: [25/50 (50%)]	Loss: 0.142958
+2020-11-17 16:37:17 - Train Worker charlie: [0/50 (0%)]	Loss: 0.156530
+2020-11-17 16:37:26 - Train Worker charlie: [25/50 (50%)]	Loss: 0.122924
+2020-11-17 16:38:00 - Starting training round, batches [150, 200]
+2020-11-17 16:38:00 - Train Worker alice: [0/50 (0%)]	Loss: 0.046834
+2020-11-17 16:38:09 - Train Worker alice: [25/50 (50%)]	Loss: 0.066568
+2020-11-17 16:38:19 - Train Worker bob: [0/50 (0%)]	Loss: 0.097762
+2020-11-17 16:38:28 - Train Worker bob: [25/50 (50%)]	Loss: 0.095521
+2020-11-17 16:38:38 - Train Worker charlie: [0/50 (0%)]	Loss: 0.042533
+2020-11-17 16:38:47 - Train Worker charlie: [25/50 (50%)]	Loss: 0.134081
+2020-11-17 16:39:21 - Starting training round, batches [200, 250]
+2020-11-17 16:39:22 - Train Worker alice: [0/50 (0%)]	Loss: 0.050177
+2020-11-17 16:39:30 - Train Worker alice: [25/50 (50%)]	Loss: 0.050276
+2020-11-17 16:39:41 - Train Worker bob: [0/50 (0%)]	Loss: 0.049666
+2020-11-17 16:39:49 - Train Worker bob: [25/50 (50%)]	Loss: 0.242581
+2020-11-17 16:40:00 - Train Worker charlie: [0/50 (0%)]	Loss: 0.030696
+2020-11-17 16:40:08 - Train Worker charlie: [25/50 (50%)]	Loss: 0.068861
+2020-11-17 16:40:45 - Starting training round, batches [250, 300]
+2020-11-17 16:40:45 - Train Worker alice: [0/50 (0%)]	Loss: 0.034901
+2020-11-17 16:40:54 - Train Worker alice: [25/50 (50%)]	Loss: 0.110517
+2020-11-17 16:41:04 - Train Worker bob: [0/50 (0%)]	Loss: 0.083140
+2020-11-17 16:41:12 - Train Worker bob: [25/50 (50%)]	Loss: 0.036342
+2020-11-17 16:41:23 - Train Worker charlie: [0/50 (0%)]	Loss: 0.061966
+2020-11-17 16:41:31 - Train Worker charlie: [25/50 (50%)]	Loss: 0.109820
+2020-11-17 16:41:47 - Starting training round, batches [300, 350]
+2020-11-17 16:41:48 - Train Worker alice: [0/13 (0%)]	Loss: 0.105037
+2020-11-17 16:41:54 - Train Worker bob: [0/13 (0%)]	Loss: 0.051738
+2020-11-17 16:42:01 - Train Worker charlie: [0/13 (0%)]	Loss: 0.110457
+2020-11-17 16:42:07 - Starting training round, batches [350, 400]
+2020-11-17 16:42:07 - At least one worker ran out of data, stopping.
+2020-11-17 16:42:13 - Test set: Average loss: 0.0828, Accuracy: 9801/10000 (98%)
+
+2020-11-17 16:42:13 - Starting epoch 6/8
+2020-11-17 16:42:37 - Starting training round, batches [0, 50]
+2020-11-17 16:42:38 - Train Worker alice: [0/50 (0%)]	Loss: 0.043906
+2020-11-17 16:42:46 - Train Worker alice: [25/50 (50%)]	Loss: 0.381143
+2020-11-17 16:42:57 - Train Worker bob: [0/50 (0%)]	Loss: 0.117958
+2020-11-17 16:43:06 - Train Worker bob: [25/50 (50%)]	Loss: 0.099993
+2020-11-17 16:43:16 - Train Worker charlie: [0/50 (0%)]	Loss: 0.046301
+2020-11-17 16:43:25 - Train Worker charlie: [25/50 (50%)]	Loss: 0.137193
+2020-11-17 16:43:58 - Starting training round, batches [50, 100]
+2020-11-17 16:43:58 - Train Worker alice: [0/50 (0%)]	Loss: 0.108200
+2020-11-17 16:44:06 - Train Worker alice: [25/50 (50%)]	Loss: 0.047248
+2020-11-17 16:44:17 - Train Worker bob: [0/50 (0%)]	Loss: 0.086496
+2020-11-17 16:44:25 - Train Worker bob: [25/50 (50%)]	Loss: 0.075358
+2020-11-17 16:44:35 - Train Worker charlie: [0/50 (0%)]	Loss: 0.063629
+2020-11-17 16:44:43 - Train Worker charlie: [25/50 (50%)]	Loss: 0.394040
+2020-11-17 16:45:15 - Starting training round, batches [100, 150]
+2020-11-17 16:45:15 - Train Worker alice: [0/50 (0%)]	Loss: 0.106555
+2020-11-17 16:45:23 - Train Worker alice: [25/50 (50%)]	Loss: 0.109239
+2020-11-17 16:45:34 - Train Worker bob: [0/50 (0%)]	Loss: 0.103196
+2020-11-17 16:45:42 - Train Worker bob: [25/50 (50%)]	Loss: 0.091824
+2020-11-17 16:45:53 - Train Worker charlie: [0/50 (0%)]	Loss: 0.110667
+2020-11-17 16:46:01 - Train Worker charlie: [25/50 (50%)]	Loss: 0.270639
+2020-11-17 16:46:33 - Starting training round, batches [150, 200]
+2020-11-17 16:46:33 - Train Worker alice: [0/50 (0%)]	Loss: 0.051587
+2020-11-17 16:46:41 - Train Worker alice: [25/50 (50%)]	Loss: 0.058784
+2020-11-17 16:46:52 - Train Worker bob: [0/50 (0%)]	Loss: 0.152232
+2020-11-17 16:47:00 - Train Worker bob: [25/50 (50%)]	Loss: 0.095066
+2020-11-17 16:47:10 - Train Worker charlie: [0/50 (0%)]	Loss: 0.013671
+2020-11-17 16:47:18 - Train Worker charlie: [25/50 (50%)]	Loss: 0.133977
+2020-11-17 16:47:50 - Starting training round, batches [200, 250]
+2020-11-17 16:47:51 - Train Worker alice: [0/50 (0%)]	Loss: 0.178343
+2020-11-17 16:47:59 - Train Worker alice: [25/50 (50%)]	Loss: 0.244580
+2020-11-17 16:48:10 - Train Worker bob: [0/50 (0%)]	Loss: 0.023359
+2020-11-17 16:48:18 - Train Worker bob: [25/50 (50%)]	Loss: 0.098548
+2020-11-17 16:48:28 - Train Worker charlie: [0/50 (0%)]	Loss: 0.051748
+2020-11-17 16:48:37 - Train Worker charlie: [25/50 (50%)]	Loss: 0.142716
+2020-11-17 16:49:08 - Starting training round, batches [250, 300]
+2020-11-17 16:49:09 - Train Worker alice: [0/50 (0%)]	Loss: 0.196692
+2020-11-17 16:49:17 - Train Worker alice: [25/50 (50%)]	Loss: 0.044486
+2020-11-17 16:49:27 - Train Worker bob: [0/50 (0%)]	Loss: 0.181064
+2020-11-17 16:49:35 - Train Worker bob: [25/50 (50%)]	Loss: 0.103916
+2020-11-17 16:49:46 - Train Worker charlie: [0/50 (0%)]	Loss: 0.030681
+2020-11-17 16:49:54 - Train Worker charlie: [25/50 (50%)]	Loss: 0.445516
+2020-11-17 16:50:10 - Starting training round, batches [300, 350]
+2020-11-17 16:50:10 - Train Worker alice: [0/13 (0%)]	Loss: 0.017614
+2020-11-17 16:50:17 - Train Worker bob: [0/13 (0%)]	Loss: 0.108371
+2020-11-17 16:50:23 - Train Worker charlie: [0/13 (0%)]	Loss: 0.143191
+2020-11-17 16:50:29 - Starting training round, batches [350, 400]
+2020-11-17 16:50:29 - At least one worker ran out of data, stopping.
+2020-11-17 16:50:35 - Test set: Average loss: 0.0844, Accuracy: 9779/10000 (98%)
+
+2020-11-17 16:50:35 - Starting epoch 7/8
+2020-11-17 16:50:59 - Starting training round, batches [0, 50]
+2020-11-17 16:51:00 - Train Worker alice: [0/50 (0%)]	Loss: 0.078174
+2020-11-17 16:51:08 - Train Worker alice: [25/50 (50%)]	Loss: 0.079599
+2020-11-17 16:51:19 - Train Worker bob: [0/50 (0%)]	Loss: 0.055926
+2020-11-17 16:51:27 - Train Worker bob: [25/50 (50%)]	Loss: 0.042030
+2020-11-17 16:51:38 - Train Worker charlie: [0/50 (0%)]	Loss: 0.043713
+2020-11-17 16:51:46 - Train Worker charlie: [25/50 (50%)]	Loss: 0.025341
+2020-11-17 16:52:19 - Starting training round, batches [50, 100]
+2020-11-17 16:52:19 - Train Worker alice: [0/50 (0%)]	Loss: 0.147304
+2020-11-17 16:52:28 - Train Worker alice: [25/50 (50%)]	Loss: 0.513816
+2020-11-17 16:52:38 - Train Worker bob: [0/50 (0%)]	Loss: 0.014738
+2020-11-17 16:52:46 - Train Worker bob: [25/50 (50%)]	Loss: 0.023850
+2020-11-17 16:52:57 - Train Worker charlie: [0/50 (0%)]	Loss: 0.020927
+2020-11-17 16:53:06 - Train Worker charlie: [25/50 (50%)]	Loss: 0.388121
+2020-11-17 16:53:38 - Starting training round, batches [100, 150]
+2020-11-17 16:53:39 - Train Worker alice: [0/50 (0%)]	Loss: 0.041676
+2020-11-17 16:53:47 - Train Worker alice: [25/50 (50%)]	Loss: 0.087833
+2020-11-17 16:53:58 - Train Worker bob: [0/50 (0%)]	Loss: 0.067446
+2020-11-17 16:54:06 - Train Worker bob: [25/50 (50%)]	Loss: 0.048226
+2020-11-17 16:54:17 - Train Worker charlie: [0/50 (0%)]	Loss: 0.105488
+2020-11-17 16:54:25 - Train Worker charlie: [25/50 (50%)]	Loss: 0.174999
+2020-11-17 16:54:57 - Starting training round, batches [150, 200]
+2020-11-17 16:54:58 - Train Worker alice: [0/50 (0%)]	Loss: 0.098777
+2020-11-17 16:55:06 - Train Worker alice: [25/50 (50%)]	Loss: 0.036225
+2020-11-17 16:55:17 - Train Worker bob: [0/50 (0%)]	Loss: 0.151979
+2020-11-17 16:55:25 - Train Worker bob: [25/50 (50%)]	Loss: 0.260763
+2020-11-17 16:55:36 - Train Worker charlie: [0/50 (0%)]	Loss: 0.277407
+2020-11-17 16:55:44 - Train Worker charlie: [25/50 (50%)]	Loss: 0.332066
+2020-11-17 16:56:17 - Starting training round, batches [200, 250]
+2020-11-17 16:56:17 - Train Worker alice: [0/50 (0%)]	Loss: 0.020660
+2020-11-17 16:56:26 - Train Worker alice: [25/50 (50%)]	Loss: 0.256234
+2020-11-17 16:56:36 - Train Worker bob: [0/50 (0%)]	Loss: 0.045229
+2020-11-17 16:56:45 - Train Worker bob: [25/50 (50%)]	Loss: 0.180928
+2020-11-17 16:56:55 - Train Worker charlie: [0/50 (0%)]	Loss: 0.126738
+2020-11-17 16:57:04 - Train Worker charlie: [25/50 (50%)]	Loss: 0.039869
+2020-11-17 16:57:38 - Starting training round, batches [250, 300]
+2020-11-17 16:57:39 - Train Worker alice: [0/50 (0%)]	Loss: 0.024307
+2020-11-17 16:57:47 - Train Worker alice: [25/50 (50%)]	Loss: 0.083841
+2020-11-17 16:57:58 - Train Worker bob: [0/50 (0%)]	Loss: 0.038162
+2020-11-17 16:58:06 - Train Worker bob: [25/50 (50%)]	Loss: 0.191822
+2020-11-17 16:58:17 - Train Worker charlie: [0/50 (0%)]	Loss: 0.107992
+2020-11-17 16:58:25 - Train Worker charlie: [25/50 (50%)]	Loss: 0.047295
+2020-11-17 16:58:42 - Starting training round, batches [300, 350]
+2020-11-17 16:58:42 - Train Worker alice: [0/13 (0%)]	Loss: 0.027523
+2020-11-17 16:58:49 - Train Worker bob: [0/13 (0%)]	Loss: 0.107922
+2020-11-17 16:58:55 - Train Worker charlie: [0/13 (0%)]	Loss: 0.015082
+2020-11-17 16:59:01 - Starting training round, batches [350, 400]
+2020-11-17 16:59:01 - At least one worker ran out of data, stopping.
+2020-11-17 16:59:08 - Test set: Average loss: 0.0911, Accuracy: 9767/10000 (98%)
+
+2020-11-17 16:59:08 - Starting epoch 8/8
+2020-11-17 16:59:30 - Starting training round, batches [0, 50]
+2020-11-17 16:59:31 - Train Worker alice: [0/50 (0%)]	Loss: 0.004948
+2020-11-17 16:59:39 - Train Worker alice: [25/50 (50%)]	Loss: 0.020066
+2020-11-17 16:59:50 - Train Worker bob: [0/50 (0%)]	Loss: 0.144237
+2020-11-17 16:59:58 - Train Worker bob: [25/50 (50%)]	Loss: 0.020400
+2020-11-17 17:00:09 - Train Worker charlie: [0/50 (0%)]	Loss: 0.077596
+2020-11-17 17:00:17 - Train Worker charlie: [25/50 (50%)]	Loss: 0.025714
+2020-11-17 17:00:51 - Starting training round, batches [50, 100]
+2020-11-17 17:00:51 - Train Worker alice: [0/50 (0%)]	Loss: 0.058653
+2020-11-17 17:00:59 - Train Worker alice: [25/50 (50%)]	Loss: 0.106412
+2020-11-17 17:01:10 - Train Worker bob: [0/50 (0%)]	Loss: 0.021935
+2020-11-17 17:01:18 - Train Worker bob: [25/50 (50%)]	Loss: 0.055747
+2020-11-17 17:01:29 - Train Worker charlie: [0/50 (0%)]	Loss: 0.087192
+2020-11-17 17:01:37 - Train Worker charlie: [25/50 (50%)]	Loss: 0.086060
+2020-11-17 17:02:11 - Starting training round, batches [100, 150]
+2020-11-17 17:02:12 - Train Worker alice: [0/50 (0%)]	Loss: 0.046400
+2020-11-17 17:02:20 - Train Worker alice: [25/50 (50%)]	Loss: 0.186227
+2020-11-17 17:02:31 - Train Worker bob: [0/50 (0%)]	Loss: 0.091395
+2020-11-17 17:02:39 - Train Worker bob: [25/50 (50%)]	Loss: 0.014605
+2020-11-17 17:02:49 - Train Worker charlie: [0/50 (0%)]	Loss: 0.306286
+2020-11-17 17:02:58 - Train Worker charlie: [25/50 (50%)]	Loss: 0.234921
+2020-11-17 17:03:32 - Starting training round, batches [150, 200]
+2020-11-17 17:03:33 - Train Worker alice: [0/50 (0%)]	Loss: 0.024411
+2020-11-17 17:03:41 - Train Worker alice: [25/50 (50%)]	Loss: 0.075441
+2020-11-17 17:03:52 - Train Worker bob: [0/50 (0%)]	Loss: 0.047419
+2020-11-17 17:04:00 - Train Worker bob: [25/50 (50%)]	Loss: 0.168630
+2020-11-17 17:04:11 - Train Worker charlie: [0/50 (0%)]	Loss: 0.181855
+2020-11-17 17:04:19 - Train Worker charlie: [25/50 (50%)]	Loss: 0.095186
+2020-11-17 17:04:52 - Starting training round, batches [200, 250]
+2020-11-17 17:04:53 - Train Worker alice: [0/50 (0%)]	Loss: 0.113642
+2020-11-17 17:05:01 - Train Worker alice: [25/50 (50%)]	Loss: 0.074260
+2020-11-17 17:05:12 - Train Worker bob: [0/50 (0%)]	Loss: 0.043793
+2020-11-17 17:05:20 - Train Worker bob: [25/50 (50%)]	Loss: 0.188155
+2020-11-17 17:05:30 - Train Worker charlie: [0/50 (0%)]	Loss: 0.061143
+2020-11-17 17:05:39 - Train Worker charlie: [25/50 (50%)]	Loss: 0.058171
+2020-11-17 17:06:12 - Starting training round, batches [250, 300]
+2020-11-17 17:06:13 - Train Worker alice: [0/50 (0%)]	Loss: 0.017703
+2020-11-17 17:06:21 - Train Worker alice: [25/50 (50%)]	Loss: 0.137133
+2020-11-17 17:06:32 - Train Worker bob: [0/50 (0%)]	Loss: 0.066894
+2020-11-17 17:06:40 - Train Worker bob: [25/50 (50%)]	Loss: 0.106351
+2020-11-17 17:06:51 - Train Worker charlie: [0/50 (0%)]	Loss: 0.062213
+2020-11-17 17:06:59 - Train Worker charlie: [25/50 (50%)]	Loss: 0.315936
+2020-11-17 17:07:15 - Starting training round, batches [300, 350]
+2020-11-17 17:07:15 - Train Worker alice: [0/13 (0%)]	Loss: 0.141890
+2020-11-17 17:07:22 - Train Worker bob: [0/13 (0%)]	Loss: 0.094376
+2020-11-17 17:07:28 - Train Worker charlie: [0/13 (0%)]	Loss: 0.069837
+2020-11-17 17:07:35 - Starting training round, batches [350, 400]
+2020-11-17 17:07:35 - At least one worker ran out of data, stopping.
+2020-11-17 17:07:41 - Test set: Average loss: 0.1040, Accuracy: 9753/10000 (98%)
+
